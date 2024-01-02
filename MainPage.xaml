@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ColorGenerator.MainPage">
 
-    <Grid Background="Black">
+    <Grid x:Name="mainGrid" >
         <Frame Margin="10, 0, 10, 0" VerticalOptions="Center">
             <VerticalStackLayout>
                 <Label 
@@ -23,7 +23,8 @@
                     x:Name="sldRed"
                     MaximumTrackColor="{StaticResource Primary}"
                     MinimumTrackColor="Red"
-                    ThumbColor="Red"/>
+                    ThumbColor="Red"
+                    ValueChanged="sld_ValueChanged"/>
                 
                 <!-- Green Slider -->
                 <Label 
@@ -36,7 +37,8 @@
                     x:Name="sldGreen"
                     MaximumTrackColor="{StaticResource Primary}"
                     MinimumTrackColor="Green"
-                    ThumbColor="Green"/>
+                    ThumbColor="Green"
+                    ValueChanged="sld_ValueChanged"/>
                 
                 <!-- Blue Slider -->
                 <Label 
@@ -49,7 +51,8 @@
                     x:Name="sldBlue"
                     MaximumTrackColor="{StaticResource Primary}"
                     MinimumTrackColor="Blue"
-                    ThumbColor="Blue"/>
+                    ThumbColor="Blue"
+                    ValueChanged="sld_ValueChanged"/>
 
                 <!-- Button -->
                 <Frame 
@@ -78,7 +81,10 @@
                 <Button
                     x:Name="btnGenerate"
                     Text="Generate Random Color"
-                    Margin="0, 15, 0, 0"/>
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    Margin="0, 15, 0, 0"
+                    Clicked="btnGenerate_Clicked"/>
             </VerticalStackLayout>
         </Frame>
     </Grid>

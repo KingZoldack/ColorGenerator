@@ -10,9 +10,17 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Color x:Key="Primary">Black</Color>
-            <Color x:Key="Secondary">Grey</Color>
+            <Color x:Key="Secondary">Gray</Color>
             <Color x:Key="Tertiary">White</Color>
-
+            <GradientStopCollection x:Key="RainbowColors">
+                <GradientStop Color="Red" Offset="0" />
+                <GradientStop Color="Orange" Offset="0.17" />
+                <GradientStop Color="Yellow" Offset="0.33" />
+                <GradientStop Color="Green" Offset="0.5" />
+                <GradientStop Color="Blue" Offset="0.67" />
+                <GradientStop Color="Indigo" Offset="0.83" />
+                <GradientStop Color="Violet" Offset="1" />
+            </GradientStopCollection>
 
         </ResourceDictionary>
     </Application.Resources>
