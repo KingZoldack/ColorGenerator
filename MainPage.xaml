@@ -74,7 +74,8 @@
                             Margin="10, 0, 0, 0"
                             HeightRequest="25"
                             WidthRequest="25"
-                            VerticalOptions="Center"/>
+                            VerticalOptions="Center"
+                            Clicked="ImageButton_Clicked"/>
 
                     </HorizontalStackLayout>
                 </Frame>

@@ -1,4 +1,5 @@
 ﻿
+//using Android.Widget;
 using System.Diagnostics;
 
 namespace ColorGenerator
@@ -6,6 +7,7 @@ namespace ColorGenerator
     public partial class MainPage : ContentPage
     {
         bool _isRandom = false;
+        string _hexvale = "";
 
         public MainPage()
         {
@@ -30,7 +32,8 @@ namespace ColorGenerator
         {
             mainGrid.BackgroundColor = color;
             btnGenerate.Background = color;
-            lblHex.Text = color.ToHex();
+            _hexvale = color.ToHex();
+            lblHex.Text = _hexvale;
         }
 
         private void btnGenerate_Clicked(object sender, EventArgs e)
@@ -49,6 +52,15 @@ namespace ColorGenerator
 
             _isRandom = false;
         }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Clipboard.SetTextAsync(_hexvale);
+
+            var toast = CommunityToolkit.Maui.Alerts.Toast.Make("Color Copied", CommunityToolkit.Maui.Core.ToastDuration.Short, 12);
+            toast?.Show();
+        }
+
     }
 
 }
