@@ -1,5 +1,6 @@
 ﻿
 //using Android.Widget;
+using Microsoft.Maui.Controls.PlatformConfiguration;
 using System.Diagnostics;
 
 namespace ColorGenerator
@@ -8,10 +9,27 @@ namespace ColorGenerator
     {
         bool _isRandom = false;
         string _hexvale = "";
+        double width = 400; 
+        double height = 600;
 
         public MainPage()
         {
             InitializeComponent();
+
+            this.Appearing += (sender, e) =>
+            {
+                if (Microsoft.Maui.Devices.DeviceInfo.Platform == Microsoft.Maui.Devices.DevicePlatform.WinUI)
+                {
+                    Window.Width = width;
+                    Window.Height = height;
+                    Window.MinimumHeight = height;
+                    Window.MaximumHeight = height;
+                    Window.MaximumWidth = width;
+                    Window.MinimumWidth = width;
+                }
+            };
+
+
         }
 
         private void sld_ValueChanged(object sender, ValueChangedEventArgs e)
