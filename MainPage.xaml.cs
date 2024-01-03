@@ -9,8 +9,8 @@ namespace ColorGenerator
     {
         bool _isRandom = false;
         string _hexvale = "";
-        double width = 400; 
-        double height = 600;
+        const double width = 400; 
+        const double height = 600;
 
         public MainPage()
         {
@@ -51,7 +51,7 @@ namespace ColorGenerator
             mainGrid.BackgroundColor = color;
             btnGenerate.Background = color;
             _hexvale = color.ToHex();
-            lblHex.Text = _hexvale;
+            lblHex.Text = $"Hex: {_hexvale}";
         }
 
         private void btnGenerate_Clicked(object sender, EventArgs e)
@@ -79,6 +79,15 @@ namespace ColorGenerator
             toast?.Show();
         }
 
+        private void imgbtnCopy_Pressed(object sender, EventArgs e)
+        {
+            imgbtnCopy.Opacity = 0.5;
+        }
+
+        private void imgbtnCopy_Released(object sender, EventArgs e)
+        {
+            imgbtnCopy.Opacity = 1;
+        }
     }
 
 }

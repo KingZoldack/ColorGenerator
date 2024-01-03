@@ -4,12 +4,13 @@
              x:Class="ColorGenerator.MainPage">
 
     <Grid x:Name="mainGrid" >
-        <Frame Margin="10, 0, 10, 0" VerticalOptions="CenterAndExpand">
+        <Frame Margin="10, 0, 10, 0" VerticalOptions="CenterAndExpand" BackgroundColor="White">
             <VerticalStackLayout>
                 <Label 
                     Text="Color Generator"
                     FontSize="Large"
                     FontAttributes="Bold"
+                    TextColor="Black"
                     HorizontalTextAlignment="Center"/>
 
                 <!-- Red Slider -->
@@ -57,7 +58,8 @@
                 <!-- Button -->
                 <Frame 
                     CornerRadius="25" 
-                    HorizontalOptions="Center" 
+                    HorizontalOptions="Center"
+                    HeightRequest="76"
                     BorderColor="Black"
                     BackgroundColor="White" 
                     Margin="0, 15, 0, 0" >
@@ -66,22 +68,27 @@
                         <Label 
                             x:Name="lblHex"
                             Text="Hex: #FFFFFF"
+                            TextColor="Black"
                             HorizontalTextAlignment="End"
                             VerticalOptions="Center"/>
 
                         <ImageButton
-                            Source="copy.svg"
+                            x:Name="imgbtnCopy"
+                            Source="copy.png"
                             Margin="10, 0, 0, 0"
-                            HeightRequest="25"
                             WidthRequest="25"
+                            HeightRequest="25"
                             VerticalOptions="Center"
-                            Clicked="ImageButton_Clicked"/>
+                            Clicked="ImageButton_Clicked"
+                            Pressed="imgbtnCopy_Pressed"
+                            Released="imgbtnCopy_Released"/>
 
                     </HorizontalStackLayout>
                 </Frame>
                 <Button
                     x:Name="btnGenerate"
                     Text="Generate Random Color"
+                    TextColor="#AF876C"
                     BorderColor="Black"
                     BorderWidth="1"
                     Margin="0, 15, 0, 0"
