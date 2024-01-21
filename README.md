@@ -28,6 +28,3 @@ To run the Color Generator Maui app, clone the repository and open the solution 
 
 This project is licensed under the [MIT License](LICENSE.md).
 
-## Acknowledgments:
-
-The Color Generator Maui app is developed by [Your Name]. Special thanks to the Maui community for support and contributions. Feel free to contribute or report issues through pull requests or by creating an issue. Happy color generating!
